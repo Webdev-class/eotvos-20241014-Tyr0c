@@ -12,6 +12,11 @@ let customers = [
 ]
 
 function removeCustomer(id) {
-    //TODO    
+    const index = customers.findIndex(customer => customer.id === id);
+    if (index !== -1) {
+        customers.splice(index, 1);
+        return [...customers]; 
+    }
+    return false;  
 }
 module.exports = removeCustomer;
